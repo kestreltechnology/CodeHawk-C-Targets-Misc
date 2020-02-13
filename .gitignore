@@ -1,0 +1,10 @@
+# CodeHawk build artefacts
+semantics
+
+# CodeHawk result files
+summaryresults*.json
+summaryresults*.xml
+functionindex.json
+
+# CodeHawk log files
+logfile*.txt

@@ -1,52 +1,52 @@
 Primary Proof Obligations
 c files             stmt     local       api  contract      open  violated     total
 ------------------------------------------------------------------------------------
-src/apprentice      4705      4409      1068       684      2857        15     13723
+src/apprentice      4728      4309      1069       682      2966        13     13754
 src/ascmagic         687       527        71        21       235         1      1541
-src/cdf             2508      2759       716       395       948        19      7326
-src/cdf_time         133        80         9         5        17         0       244
-src/compress         999       756       119       123       279         0      2276
-src/der              432       292        91        28       134         6       977
+src/cdf             2515      2759       716       395       948        19      7333
+src/cdf_time         134        79        10         7        15         0       245
+src/compress         997       754       119       116       276         0      2262
+src/der              432       290        86        27       133         6       968
 src/encoding         632       585       160        63        78         0      1518
-src/file            1723       492        27        46       327         1      2615
+src/file            1743       496        27        44       341         1      2651
 src/fmtcheck         211       358        98        37       129         0       833
-src/fsmagic          357       495        57        79        36         1      1024
-src/funcs            967       833       219       112       481         0      2612
+src/fsmagic          352       493        55        70        42         0      1012
+src/funcs            971       834       219       112       481         0      2617
 src/is_tar           103       112        23        25        50         0       313
-src/magic            525       482        68        21       162         0      1258
-src/print            854       264       130        73        64         0      1385
+src/magic            541       482        68        21       162         0      1274
+src/print            853       262       130        73        67         0      1385
 src/readcdf         1027       588        71        24       324         0      2034
 src/readelf         2078      1502       189       208       567         4      4544
-src/softmagic       3439      3941       972       426      1199        21      9977
+src/softmagic       3445      3941       971       426      1200        21      9983
 src/strlcat           26        57        13         0        25         0       121
 src/strlcpy           24        42        10         0        13         0        89
 ------------------------------------------------------------------------------------
-total              21430     18574      4111      2370      7925        68     54410
-percent            39.39     34.14      7.56      4.36     14.57      0.12
+total              21499     18470      4105      2351      8052        65     54477
+percent            39.46     33.90      7.54      4.32     14.78      0.12
 
 Supporting Proof Obligations
 c files             stmt     local       api  contract      open  violated     total
 ------------------------------------------------------------------------------------
-src/apprentice        64       140       235        17       333         8       789
+src/apprentice        64       140       236        17       338         8       795
 src/ascmagic          23        10        75         0        14         0       122
 src/cdf               37       130       349        12       123         0       651
 src/cdf_time           0         9         0         0         0         0         9
-src/compress          27        32        94         3        31         0       187
-src/der                7        37         0         0        19         0        63
+src/compress          29        34        97         3        32         0       195
+src/der                9        37         2         0        22         0        70
 src/encoding           1        38        35         0         4         0        78
 src/file              29         4         8         4        33         0        78
 src/fmtcheck           2        45        11         2        22         0        82
-src/fsmagic            4         4        18         0         0         0        26
+src/fsmagic            7         6        18         0         0         0        31
 src/funcs             24        20        96         1        30         0       171
 src/is_tar             1        14         3         0         0         0        18
-src/magic             10        35       114         1        19         1       179
-src/print             19         5         1         0         5         0        30
+src/magic              9        35       112         1        19         1       176
+src/print             19         4         1         0         6         0        30
 src/readcdf           62        36       109         0        92         0       299
 src/readelf           59       105       102         0       124         2       390
-src/softmagic         69        93       393         3       360         5       918
+src/softmagic         69        93       388         3       354         5       907
 ------------------------------------------------------------------------------------
-total                438       757      1643        43      1209        16      4090
-percent            10.71     18.51     40.17      1.05     29.56      0.39
+total                444       760      1642        43      1213        16      4102
+percent            10.82     18.53     40.03      1.05     29.57      0.39
 
 
 Proof Obligation Statistics
@@ -54,47 +54,47 @@ Proof Obligation Statistics
 Primary Proof Obligations
                                   stmt     local       api  contract      open  violated     total
 --------------------------------------------------------------------------------------------------
-allocation-base                      0         0        11        22        44         0        77
+allocation-base                      0         0        11        22        47         0        80
 cast                               691         0         0         0        19         0       710
 common-base                          0         0         0         0        62         0        62
 common-base-type                     0         0         0         0        31         0        31
 controlled-resource                 14         0         0         0        15         0        29
 format-cast                         49         0         0         0        18         0        67
 format-string                      139         0         0         0         3         0       142
-in-scope                          1717      4432         0         0       553         0      6702
+in-scope                          1717      4330         0         0       655         0      6702
 index-lower-bound                  355        12         0         0         7         0       374
 index-upper-bound                  230        96        14         0        34         0       374
-initialized                       4535      4930       962       114      1295        14     11836
-initialized-range                  210         0         0         0       267         0       477
+initialized                       4535      4936       962       114      1295        14     11842
+initialized-range                  218         0         0         0       264         0       482
 int-overflow                        81        41         7         0        48         0       177
 int-underflow                       96        42         9         0        30         0       177
-lower-bound                       1706      3475        52         0       591         0      5824
-no-overlap                          12        21         0         0        62         0        95
+lower-bound                       1721      3475        52         0       591         0      5839
+no-overlap                          30        20         0         0        67         0       117
 non-negative                       247         1         0         0         0         0       248
-not-null                          1029       429      2419       153       595         0      4625
+not-null                          1028       426      2417       153       595         0      4619
 not-zero                            91        16         7         0        12         0       126
-null-terminated                    218         0         0         0       193         0       411
+null-terminated                    226         0         0         0       193         0       419
 pointer-cast                      1213         0        23         7        22         0      1265
 ptr-lower-bound                    747        22         1         0        44         0       814
-ptr-upper-bound                    316         8        33         0       251         1       608
-ptr-upper-bound-deref               70        46       210         0       477        17       803
+ptr-upper-bound                    322         5        31         0       249         0       607
+ptr-upper-bound-deref               70        46       209         0       478        17       803
 signed-to-signed-cast-lb           250         1         0         0        14         0       265
 signed-to-signed-cast-ub           250         1         0         0        14         0       265
 signed-to-unsigned-cast-lb         464        19        34        12       188        12       717
 signed-to-unsigned-cast-ub         639        18         5         0        55         0       717
-stack-address-escape               650        47         0        26       176         3       899
+stack-address-escape               650        48         0        26       175         3       899
 uint-overflow                      191       114        58         0       210         0       573
 uint-underflow                     474        30        20         0        49         0       573
-unsigned-to-signed-cast            632        12        51         1       145         1       841
-unsigned-to-unsigned-cast          395         3         9         4        80         4       491
-upper-bound                       1622      3171        52        56       923         0      5824
-valid-mem                         1711      1584       114      1975      1377         0      6761
+unsigned-to-signed-cast            632        12        50         1       146         1       841
+unsigned-to-unsigned-cast          395         3         9         2        82         2       491
+upper-bound                       1637      3171        52        56       923         0      5839
+valid-mem                         1711      1582       114      1958      1396         0      6761
 value-constraint                    14         2         6         0        18         0        40
 var-args                           139         0         0         0         3         0       142
 width-overflow                     233         1        14         0         0        16       248
 --------------------------------------------------------------------------------------------------
-total                            21430     18574      4111      2370      7925        68     54410
-percent                          39.39     34.14      7.56      4.36     14.57      0.12
+total                            21499     18470      4105      2351      8052        65     54477
+percent                          39.46     33.90      7.54      4.32     14.78      0.12
 
 Supporting Proof Obligations
                                   stmt     local       api  contract      open  violated     total
@@ -106,23 +106,23 @@ initialized                         10        76       753         8       387  
 int-overflow                         0         2         2         0        30         0        34
 int-underflow                        0         0         7         0        31         0        38
 lower-bound                          0        15        16         0        46         0        77
-not-null                           328        53       573        10        91         0      1055
+not-null                           335        54       574        10        94         0      1067
 not-zero                             2         1         0         0        14         0        17
 pointer-cast                         0         0         5         0         5         0        10
-preserved-all-memory                 0       490         0         0        67         0       557
+preserved-all-memory                 0       488         0         0        69         0       557
 ptr-lower-bound                      2         0         0         0         0         0         2
-ptr-upper-bound                     26        15        21         0        20         1        82
-ptr-upper-bound-deref               12        32       108         0       122         6       274
+ptr-upper-bound                     25        15        16         0        23         1        79
+ptr-upper-bound-deref               12        32       107         0       120         6       271
 signed-to-unsigned-cast-lb          16         6         2         0        15         0        39
 signed-to-unsigned-cast-ub           2         0         0         0         6         0         8
 uint-overflow                       20         8        16         0        55         0        99
-uint-underflow                       0         5         4         0         9         1        18
-unsigned-to-signed-cast             11         1        15         8        66         8       101
+uint-underflow                       0         9         8         0         9         1        26
+unsigned-to-signed-cast             11         1        15         8        64         8        99
 unsigned-to-unsigned-cast            0         1        14         0         8         0        23
 upper-bound                          0        15        16         0        46         0        77
 valid-mem                            0        11        52         4        59         0       126
 value-constraint                     9         3         1         0        76         0        89
 width-overflow                       0         0        33         0         4         0        37
 --------------------------------------------------------------------------------------------------
-total                              438       757      1643        43      1209        16      4090
-percent                          10.71     18.51     40.17      1.05     29.56      0.39
+total                              444       760      1642        43      1213        16      4102
+percent                          10.82     18.53     40.03      1.05     29.57      0.39

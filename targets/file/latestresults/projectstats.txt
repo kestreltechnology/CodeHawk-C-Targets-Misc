@@ -1,0 +1,75 @@
+
+File line and function counts
+
+file                     LOC        CLOC   functions
+----------------------------------------------------
+src/apprentice          3425        2306          61
+src/apptype               30           2           0
+src/ascmagic             360         241           4
+src/cdf                 1295         908          46
+src/cdf_time             176          75           6
+src/compress             760         451          15
+src/der                  329         146           6
+src/encoding             529         225           9
+src/file                 632         373          11
+src/fmtcheck             250         222           4
+src/fsmagic              415         184           3
+src/funcs                602         368          22
+src/is_tar               158          66           3
+src/magic                656         291          22
+src/print                263         163           3
+src/readcdf              676         354           9
+src/readelf             1638         930          18
+src/softmagic           2075        1619          24
+src/strlcat               57          24           1
+src/strlcpy               53          19           1
+----------------------------------------------------
+total                  14379        8967         268
+
+Distribution of lvalue hosts
+file                     mem         var         tmp
+----------------------------------------------------
+src/apprentice           350         839         148
+src/apptype                0           0           0
+src/ascmagic              28          87          47
+src/cdf                  152         488         170
+src/cdf_time               4          34           0
+src/compress              68         242          62
+src/der                   22          79           9
+src/encoding              42         120          14
+src/file                  25         150          29
+src/fmtcheck              15          41           8
+src/fsmagic               10          47          66
+src/funcs                 65         216          42
+src/is_tar                 9          34           6
+src/magic                 33         140          29
+src/print                  8          42           9
+src/readcdf               53         190          37
+src/readelf               48         337         342
+src/softmagic            112         366         160
+src/strlcat                3          12           2
+src/strlcpy                4          11           3
+----------------------------------------------------
+total                   1051        3475        1183
+
+================================================================================
+Dictionary
+================================================================================
+attrparam-table             7
+attribute-table            15
+attributes-table           17
+constant-table            742
+exp-table                1253
+funarg-table              119
+funargs-table             245
+lhost-table                22
+lval-table                 24
+offset-table              293
+typ-table                 643
+string-table              245
+================================================================================
+fieldinfo-table           414
+compinfo-table             84
+initinfo-table           1108
+varinfo-table             459
+offset-init-table        1999

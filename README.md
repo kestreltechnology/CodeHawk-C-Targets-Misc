@@ -17,12 +17,14 @@ computers.
 Add the following line to your chc/util/ConfigLocal.py file (if not
 present, copy from chc/util/ConfigLocal.template):
 ```
+    misctargets_home = os.path.expanduser('~')
     config.targets = {
-        "misc": os.path.join(misctargets_home,'CodeHawk-C-Targets-Misc/targets/misc.json")
+        "misc": os.path.join(misctargets_home,'CodeHawk-C-Targets-Misc/targets/misc.json')
         }
 ```
-where misctargets_home is assumed to hold your local path to the
-CodeHawk-C-Targets-Misc directory. When registered in this way the
+(modify misctargets_home to hold your local path to the
+CodeHawk-C-Targets-Misc directory, if necessary).
+When registered in this way the
 path
 to the project can be specified with **misc:** followed by the name
 of the project, e.g., **misc:file**, in every
@@ -45,10 +47,11 @@ and to view the results when analysis is completed
   [https://github.com/file/file](https://github.com/file/file)
 - *size*: 20 .c files, 287 functions, 14,966 LOC
 - *semantic size*: 7637 statements, 1860 calls, 2852 assignments
-- *primary proof obligations*: 54,410
-- *current analysis status*: 7911 open primary proof obligations
-  (14.5%) (not yet proven)
+  ([more detailed statistics](targets/file/latestresults/projectstats.txt))
+- *primary proof obligations (ppo's)*: 54,477
+- *current analysis status*: 46,425 ppo's proven safe or delegated
+  (85.2%), 8052 ppo's not yet proven (14.8%)
   ([more detailed results](targets/file/latestresults/summaryresults.txt),
   broken down by file and proof obligation kind)
 - *analysis time*: approximately 20 mins (single core), or
-  8 mins (4 cores).
+  9 mins (4 cores), or 5 mins (10 cores).

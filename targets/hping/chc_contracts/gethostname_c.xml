@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:54.235000"/>
+  <cfile name="gethostname">
+    <data-structures/>
+    <global-variables>
+      <gvar name="last_answerp"/>
+    </global-variables>
+    <functions>
+      <function name="get_hostname">
+        <parameters>
+          <par name="addr" nr="1"/>
+        </parameters>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<valid-mem/>
+		<ci>last_answerp</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

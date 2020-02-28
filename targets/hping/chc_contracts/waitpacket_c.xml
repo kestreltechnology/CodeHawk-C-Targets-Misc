@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:59.921647"/>
+  <cfile name="waitpacket">
+    <data-structures/>
+    <global-variables>
+      <gvar name="cs_vector_len"/>
+      <gvar name="cs_window"/>
+      <gvar name="cs_window_shift"/>
+      <gvar name="dst_port"/>
+      <gvar name="linkhdr_size"/>
+      <gvar name="sample"/>
+      <gvar name="samplelen"/>
+      <gvar name="samplelocal"/>
+      <gvar name="src_ttl"/>
+    </global-variables>
+    <functions>
+      <function name="clock_skew">
+        <parameters>
+          <par name="hz" nr="1"/>
+          <par name="tstamp" nr="2"/>
+          <par name="rttms" nr="3"/>
+        </parameters>
+	<preconditions>
+	  <!-- cs_vector_len -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>cs_vector_len</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- cs_window -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<apply>
+		  <times/>
+		  <ci>cs_window</ci>
+		  <cn>1000</cn>
+		</apply>
+		<ci>MININT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <times/>
+		  <ci>cs_window</ci>
+		  <cn>1000</cn>
+		</apply>
+		<ci>MAXINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- cs_window_shift -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<apply>
+		  <minus/>
+		  <ci>cs_window_shift</ci>
+		  <cn>1</cn>
+		</apply>
+		<ci>MININT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>cs_window_shift</ci>
+		<ci>MAXINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- sample -->
+	  <pre>
+	    <math>
+	      <apply>
+		<allocation-base/>
+		<ci>sample</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<valid-mem/>
+		<ci>sample</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!--  samplelen -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>samplelen</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>samplelen</ci>
+		  <cn>1</cn>
+		</apply>
+		<ci>MAXINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- samplelocal -->
+	  <pre>
+	    <math>
+	      <apply>
+		<allocation-base/>
+		<ci>samplelocal</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<valid-mem/>
+		<ci>samplelocal</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+      <function name="handle_hcmp">
+        <parameters>
+          <par name="packet" nr="1"/>
+          <par name="size" nr="2"/>
+        </parameters>
+      </function>
+      <function name="hex_dump">
+        <parameters>
+          <par name="packet" nr="1"/>
+          <par name="size" nr="2"/>
+        </parameters>
+      </function>
+      <function name="human_dump">
+        <parameters>
+          <par name="packet" nr="1"/>
+          <par name="size" nr="2"/>
+        </parameters>
+      </function>
+      <function name="icmp_unreach_rtt">
+        <parameters>
+          <par name="quoted_ip" nr="1"/>
+          <par name="size" nr="2"/>
+          <par name="seqp" nr="3"/>
+          <par name="ms_delay" nr="4"/>
+        </parameters>
+      </function>
+      <function name="log_icmp_addr">
+        <parameters>
+          <par name="addrptr" nr="1"/>
+        </parameters>
+      </function>
+      <function name="log_icmp_ts">
+        <parameters>
+          <par name="ts" nr="1"/>
+        </parameters>
+      </function>
+      <function name="log_ip">
+        <parameters>
+          <par name="status" nr="1"/>
+          <par name="sequence___0" nr="2"/>
+        </parameters>
+	<postconditions>
+	  <post>
+	    <math>
+	      <apply>
+		<preserves-all-memory/>
+	      </apply>
+	    </math>
+	  </post>
+	</postconditions>
+      </function>
+      <function name="log_traceroute">
+        <parameters>
+          <par name="packet" nr="1"/>
+          <par name="size" nr="2"/>
+          <par name="icmp_code" nr="3"/>
+        </parameters>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>src_ttl</ci>
+		  <cn>1</cn>
+		</apply>
+		<ci>MAXINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+      <function name="print_tcp_timestamp">
+        <parameters>
+          <par name="tcp" nr="1"/>
+          <par name="tcpsize" nr="2"/>
+          <par name="rttms" nr="3"/>
+        </parameters>
+      </function>
+      <function name="read_packet">
+        <parameters>
+          <par name="packet" nr="1"/>
+          <par name="size" nr="2"/>
+        </parameters>
+	<postconditions>
+	  <post>
+	    <math>
+	      <apply>
+		<preserves-all-memory/>
+	      </apply>
+	    </math>
+	  </post>
+	</postconditions>
+      </function>
+      <function name="recv_beep">
+        <parameters/>
+	<postconditions>
+	  <post>
+	    <math>
+	      <apply>
+		<preserves-all-memory/>
+	      </apply>
+	    </math>
+	  </post>
+	</postconditions>
+      </function>
+      <function name="recv_icmp">
+        <parameters>
+          <par name="packet" nr="1"/>
+          <par name="size" nr="2"/>
+        </parameters>
+      </function>
+      <function name="recv_tcp">
+        <parameters>
+          <par name="packet" nr="1"/>
+          <par name="size" nr="2"/>
+        </parameters>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>dst_port</ci>
+		  <cn>1</cn>
+		</apply>
+		<ci>MAXINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+      <function name="recv_udp">
+        <parameters>
+          <par name="packet" nr="1"/>
+          <par name="size" nr="2"/>
+        </parameters>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>dst_port</ci>
+		  <cn>1</cn>
+		</apply>
+		<ci>MAXINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+      <function name="wait_packet">
+        <parameters/>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>linkhdr_size</ci>
+		  <cn>65535</cn>
+		</apply>
+		<ci>MAXINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

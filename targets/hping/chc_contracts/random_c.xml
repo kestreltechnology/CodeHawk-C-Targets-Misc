@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:55.320089"/>
+  <cfile name="random">
+    <data-structures/>
+    <functions>
+      <function name="hp_rand">
+        <parameters/>
+      </function>
+      <function name="hp_rand_init">
+        <parameters/>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

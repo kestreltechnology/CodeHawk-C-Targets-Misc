@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:55.804691"/>
+  <cfile name="relid">
+    <data-structures/>
+    <global-variables>
+      <gvar name="out_of_sequence_pkt"/>
+    </global-variables>
+    <functions>
+      <function name="relativize_id">
+        <parameters>
+          <par name="seqnum" nr="1"/>
+          <par name="ip_id" nr="2"/>
+        </parameters>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<lt/>
+		<ci>out_of_sequence_pkt</ci>
+		<ci>MAXINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+	<postconditions>
+	  <post>
+	    <math>
+	      <apply>
+		<preserves-all-memory/>
+	      </apply>
+	    </math>
+	  </post>
+	</postconditions>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

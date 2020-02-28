@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:58.559932"/>
+  <cfile name="send">
+    <data-structures/>
+    <global-variables>
+      <gvar name="sending_wait"/>
+      <gvar name="sent_pkt"/>
+    </global-variables>
+    <functions>
+      <function name="select_next_random_dest">
+        <parameters/>
+      </function>
+      <function name="select_next_random_source">
+        <parameters/>
+      </function>
+      <function name="send_packet">
+        <parameters>
+          <par name="signal_id" nr="1"/>
+        </parameters>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>sending_wait</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>sent_pkt</ci>
+		  <cn>1</cn>
+		</apply>
+		<ci>MAXINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

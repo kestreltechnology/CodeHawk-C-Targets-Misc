@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:58.760670"/>
+  <cfile name="sendicmp">
+    <data-structures/>
+    <global-variables>
+      <gvar name="_icmp_seq"/>      
+      <gvar name="data_size"/>
+      <gvar name="icmp_cksum"/>
+      <gvar name="icmp_ip_dstport"/>
+      <gvar name="icmp_ip_ihl"/>
+      <gvar name="icmp_ip_protocol"/>
+      <gvar name="icmp_ip_srcport"/>
+      <gvar name="icmp_ip_tos"/>
+      <gvar name="icmp_ip_tot_len"/>
+      <gvar name="icmp_ip_version"/>
+      <gvar name="opt_icmpcode"/>
+      <gvar name="opt_icmptype"/>
+    </global-variables>
+    <functions>
+      <function name="send_icmp">
+        <parameters/>
+      </function>
+      <function name="send_icmp_address">
+        <parameters/>
+	<preconditions>
+	  <!-- _icmp_seq -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>_icmp_seq</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>_icmp_seq</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- icmp_cksum -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>icmp_cksum</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>icmp_cksum</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- opt_icmptype -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>opt_icmptype</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>opt_icmptype</ci>
+		<cn>255</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+      <function name="send_icmp_echo">
+        <parameters/>
+	<preconditions>
+	  <!-- data_size -->
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>data_size</ci>
+		  <cn>8</cn>
+		</apply>
+		<ci>MAXUINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- icmp_cksum -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>icmp_cksum</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>icmp_cksum</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- _icmp_seq -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>_icmp_seq</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>_icmp_seq</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- opt_icmpcode -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>opt_icmpcode</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>opt_icmpcode</ci>
+		<cn>255</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- opt_icmptype -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>opt_icmptype</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>opt_icmptype</ci>
+		<cn>255</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+      <function name="send_icmp_other">
+        <parameters/>
+	<preconditions>
+	  <!-- data_size -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>data_size</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>data_size</ci>
+		  <cn>40</cn>
+		</apply>
+		<ci>MAXUINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- icmp_cksum -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>icmp_cksum</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>icmp_cksum</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- icmp_ip_dstport -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>icmp_ip_dstport</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>icmp_ip_dstport</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- icmp_ip_ihl -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>icmp_ip_ihl</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>icmp_ip_ihl</ci>
+		<cn>255</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- icmp_ip_protocol -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>icmp_ip_protocol</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>icmp_ip_protocol</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- icmp_ip_srcport -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>icmp_ip_srcport</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>icmp_ip_srcport</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- icmp_ip_tos -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>icmp_ip_tos</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>icmp_ip_tos</ci>
+		<cn>255</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- icmp_ip_tot_len -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>icmp_ip_tot_len</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- icmp_ip_version -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>icmp_ip_version</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>icmp_ip_version</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- opt_icmpcode -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>opt_icmpcode</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>opt_icmpcode</ci>
+		<cn>255</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- opt_icmptype -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>opt_icmptype</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>opt_icmptype</ci>
+		<cn>255</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+      <function name="send_icmp_timestamp">
+        <parameters/>
+	<preconditions>
+	  <!-- icmp_cksum -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>icmp_cksum</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>icmp_cksum</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- _icmp_seq -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>_icmp_seq</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>_icmp_seq</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- opt_icmptype -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>opt_icmptype</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>opt_icmptype</ci>
+		<cn>255</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

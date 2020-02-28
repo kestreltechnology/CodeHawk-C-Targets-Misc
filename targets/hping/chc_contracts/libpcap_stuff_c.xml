@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:54.523405"/>
+  <cfile name="libpcap_stuff">
+    <data-structures/>
+    <global-variables>
+      <gvar name="pcapfp"/>
+    </global-variables>
+    <functions>
+      <function name="close_pcap">
+        <parameters/>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<valid-mem/>
+		<ci>pcapfp</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+	<postconditions>
+	  <post>
+	    <math>
+	      <apply>
+		<preserves-all-memory/>
+	      </apply>
+	    </math>
+	  </post>
+	</postconditions>
+      </function>
+      <function name="open_pcap">
+        <parameters/>
+      </function>
+      <function name="pcap_recv">
+        <parameters>
+          <par name="packet" nr="1"/>
+          <par name="size" nr="2"/>
+        </parameters>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<valid-mem/>
+		<ci>pcapfp</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

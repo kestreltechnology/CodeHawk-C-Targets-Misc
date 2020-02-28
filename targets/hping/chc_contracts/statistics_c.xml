@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:59.398859"/>
+  <cfile name="statistics">
+    <data-structures/>
+    <global-variables>
+      <gvar name="recv_pkt"/>
+    </global-variables>
+    <functions>
+      <function name="print_statistics">
+        <parameters>
+          <par name="signal_id" nr="1"/>
+        </parameters>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <times/>
+		  <ci>recv_pkt</ci>
+		  <cn>100</cn>
+		</apply>
+		<ci>MAXINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<apply>
+		  <times/>
+		  <ci>recv_pkt</ci>
+		  <cn>100</cn>
+		</apply>
+		<ci>MININT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

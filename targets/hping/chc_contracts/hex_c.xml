@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:54.407431"/>
+  <cfile name="hex">
+    <data-structures/>
+    <functions>
+      <function name="bintohex">
+        <parameters>
+          <par name="dest" nr="1"/>
+          <par name="bin" nr="2"/>
+          <par name="len" nr="3"/>
+        </parameters>
+      </function>
+      <function name="hextobin">
+        <parameters>
+          <par name="dest" nr="1"/>
+          <par name="hexstr" nr="2"/>
+          <par name="len" nr="3"/>
+        </parameters>
+	<postconditions>
+	  <post>
+	    <math>
+	      <apply>
+		<preserves-all-memory/>
+	      </apply>
+	    </math>
+	  </post>
+	</postconditions>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

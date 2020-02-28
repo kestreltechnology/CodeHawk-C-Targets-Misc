@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:54.773993"/>
+  <cfile name="memlock">
+    <data-structures/>
+    <functions>
+      <function name="memlock">
+        <parameters>
+          <par name="addr" nr="1"/>
+          <par name="size" nr="2"/>
+        </parameters>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

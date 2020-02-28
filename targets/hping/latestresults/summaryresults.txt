@@ -1,0 +1,182 @@
+Primary Proof Obligations
+c files             stmt     local       api  contract      open  violated     total
+------------------------------------------------------------------------------------
+adbuf                383       482       147        43        80         4      1135
+antigetopt           648       216        19        13       309         0      1205
+apd                 3360      2037       345       439      1662        59      7843
+apdutils             245       253        16        68       133         0       715
+ars                 1077      1123       326        86       750         0      3362
+arsglue               83         8         0         0        19         0       110
+binding               64        73         0         3        12         0       152
+cksum                 23        18         3         0        11         0        55
+datafiller           118        24        12         4        10         0       168
+datahandler           52        17         7         7        27         0       110
+display_ipopt        181       161         6        29        76         0       453
+gethostname           98        24         4         5        21         0       152
+getifname            385        82         6         4        30         4       507
+getlhs                18         6         0         1         3         0        28
+getusec               50         3         0         0        10         0        63
+hex                   61        55        11         5        30         0       162
+hstring               86        72        18        25        61         0       262
+ip_opt_build         150        32        15         8        18         0       223
+libpcap_stuff        104        19         1         1        17         0       142
+listen               139        29         0         1        54         0       223
+logicmp              114        36         6         2        27         0       185
+main                 815        76         1         1       121         0      1014
+memlock               10         7         2         2         7         0        28
+memstr                30        22         6         7        16         0        81
+memunlock             10         7         2         2         7         0        28
+opensockraw            7         2         0         0         0         0         9
+parseoptions        1087       109        12        21       375         4      1604
+random                72        40         0         0        13         0       125
+rapd                1482       887        63        22      1186         9      3640
+relid                 19        32        12         1        12         0        76
+resolve               45        56        10        10        22         0       143
+rtt                  202        94        11         7        13         0       327
+sbignum             3796      3115       858       404      1526        27      9699
+scan                 931       352        49        40       254         3      1626
+send                 291        35         0         9        32         4       367
+sendhcmp              43         1         1         2         0         0        47
+sendicmp             410       351         0       155        57         0       973
+sendip               178       184        19        44        31         3       456
+sendip_handler       120        17         2         5        19         0       163
+sendrawip             22        20         0         3         4         0        49
+sendtcp              176       145         0        43        42         0       406
+sendudp               90        81         0        29        22         0       222
+signal                24         6         0         0         9         0        39
+sockopt               30        14         0         0         2         0        46
+split                391       729       212        31       245         0      1608
+statistics           107         2         0         2         8         0       119
+strlcpy               24        42        10         0        13         0        89
+usage                 42         0         0         0         2         0        44
+version               40         0         0         0         0         0        40
+waitpacket          2081       449        56        67       550         2      3203
+------------------------------------------------------------------------------------
+total              20014     11645      2268      1651      7948       119     43526
+percent            45.98     26.75      5.21      3.79     18.26      0.27
+
+Supporting Proof Obligations
+c files             stmt     local       api  contract      open  violated     total
+------------------------------------------------------------------------------------
+adbuf                 10        10       105         0        47         0       172
+antigetopt             2        27         2         0         6         0        37
+apd                   28        35        35         6        16         0       120
+apdutils               1        10         8         0         2         0        21
+ars                   77        24        64         0        99         8       264
+arsglue                5         0         0         0         6         0        11
+cksum                  0         1         0         0         0         0         1
+datahandler            0         2         1         0         5         0         8
+getifname             11         7         0         1         1         0        20
+getusec                0         2         0         0         2         0         4
+hex                    0         4         0         0         0         0         4
+hstring                0         6         0         0         0         0         6
+ip_opt_build           1         2         0         0         1         0         4
+libpcap_stuff          0         0         0         0         1         0         1
+listen                 2         0         0         1         3         0         6
+logicmp                0         0         4         0         2         0         6
+main                  30        11         1         1         7         0        50
+memstr                 0         2         0         0         0         0         2
+parseoptions          16        10         1         0        12         0        39
+rapd                  52         2       366         0        24         0       444
+relid                  0         2         0         0         0         0         2
+resolve                0         3         4         0         0         0         7
+rtt                    0         3         0         0         1         0         4
+sbignum               99        34      1286        11       690         2      2120
+scan                   9        15         2         4        22         0        52
+send                   0         0         0         0        18         0        18
+sendhcmp               0         1         0         0         0         0         1
+sendicmp               2        10         0         3        82         0        97
+sendip                 0         0         0         0         1         0         1
+sendip_handler        34         3         2         3        33         0        75
+sendrawip              1         2         0         0         5         0         8
+sendtcp                2         2         0         0         6         0        10
+sendudp                2         2         0         0         6         0        10
+signal                 0         2         0         0         0         0         2
+split                 21        10        81         2        28         0       142
+statistics             0         0         0         0         1         0         1
+strlcpy                0         1         0         0         0         0         1
+usage                  0         1         0         0         0         0         1
+waitpacket            25        11         9         4        54         0       103
+------------------------------------------------------------------------------------
+total                430       257      1971        36      1181        10      3875
+percent            11.10      6.63     50.86      0.93     30.48      0.26
+
+
+Proof Obligation Statistics
+
+Primary Proof Obligations
+                                  stmt     local       api  contract      open  violated     total
+--------------------------------------------------------------------------------------------------
+allocation-base                      0         0         6        19        11         0        36
+cast                               531         0         0         0        11         0       542
+common-base                          0         0         0         0        20         0        20
+common-base-type                     0         0         0         0         8         0         8
+controlled-resource                  3         0         0         0        20         0        23
+format-cast                         74         0         0         0        26         0       100
+format-string                      213         0         0         0         3         0       216
+in-scope                          1785      2499         0         0       675         0      4959
+index-lower-bound                  346        68        82         3        78         0       577
+index-upper-bound                  332        68        64         0       113         0       577
+initialized                       3312      3464       426        20       966        14      8188
+initialized-range                  373         1         0         0       510         1       884
+int-overflow                       142        53        14        25       200         1       434
+int-underflow                      212        98        26         7        91         0       434
+lower-bound                       1755      2142        33         0       507         0      4437
+no-overlap                         124        11         0         0       124         0       259
+non-negative                       145         1         0         0         7         0       153
+not-null                          1059       324      1270       148       718         0      3519
+not-zero                            41         3         3         0        16         0        63
+null                                 4         0         0         0         0         0         4
+null-terminated                    383         0         0         0       364         0       747
+pointer-cast                      1429        14        15        12        81         0      1551
+ptr-lower-bound                    408       110         2         0        70         2       590
+ptr-upper-bound                    758         8        53         3       257         3      1079
+ptr-upper-bound-deref               86         7        66         2       423         4       584
+signed-to-signed-cast-lb           187         1         0         0         3         0       191
+signed-to-signed-cast-ub           188         0         0         0         3         0       191
+signed-to-unsigned-cast-lb         372        63        30        62       119         5       646
+signed-to-unsigned-cast-ub         582         3         8        31        22         1       646
+stack-address-escape               376         3         0        35        88        17       502
+uint-overflow                      195        13        46         2       105         0       361
+uint-underflow                     238        33        23         3        64         0       361
+unsigned-to-signed-cast            417        10        13         6        52         1       498
+unsigned-to-unsigned-cast          134        16         1        69        48        62       268
+upper-bound                       1707      1902        33       102       693         0      4437
+valid-mem                         1761       729        53      1102      1394         0      5039
+value-constraint                     3         0         1         0        29         0        33
+var-args                           200         0         0         0        16         0       216
+width-overflow                     139         1         0         0        13         8       153
+--------------------------------------------------------------------------------------------------
+total                            20014     11645      2268      1651      7948       119     43526
+percent                          45.98     26.75      5.21      3.79     18.26      0.27
+
+Supporting Proof Obligations
+                                  stmt     local       api  contract      open  violated     total
+--------------------------------------------------------------------------------------------------
+allocation-base                      0         5        74         2        31         0       112
+distinct-region                      0         0         0         0        12         0        12
+index-lower-bound                   16         0        25         0         6         0        47
+index-upper-bound                   15         0        20         0         5         0        40
+initialized                          9        17       589         0       242         0       857
+int-overflow                         0         0         2         0         2         0         4
+int-underflow                        0         1        12         0        13         0        26
+lower-bound                          0         0       157         0        74         0       231
+not-null                           281        29       454        26       119         0       909
+not-zero                             0         1         0         0         1         0         2
+pointer-cast                         8        11         2         0         9         0        30
+preserved-all-memory                 0       135         0         0         9         0       144
+ptr-lower-bound                      0         0         0         0         2         0         2
+ptr-upper-bound                     22        11       109         2        79         2       223
+ptr-upper-bound-deref                5         8        40         0        74         0       127
+signed-to-unsigned-cast-lb          26         1         1         6         3         0        37
+signed-to-unsigned-cast-ub           5         3         0         0         3         0        11
+uint-overflow                       19         3       115         0       115         0       252
+uint-underflow                       0        29        13         0        17         8        59
+unsigned-to-signed-cast             15         0        28         0        16         0        59
+unsigned-to-unsigned-cast            0         0         0         0         1         0         1
+upper-bound                          0         0       157         0        74         0       231
+valid-mem                            0         0       171         0       110         0       281
+value-constraint                     9         3         2         0       164         0       178
+--------------------------------------------------------------------------------------------------
+total                              430       257      1971        36      1181        10      3875
+percent                          11.10      6.63     50.86      0.93     30.48      0.26

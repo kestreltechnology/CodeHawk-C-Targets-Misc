@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:59.048984"/>
+  <cfile name="sockopt">
+    <data-structures/>
+    <functions>
+      <function name="socket_broadcast">
+        <parameters>
+          <par name="sd" nr="1"/>
+        </parameters>
+      </function>
+      <function name="socket_iphdrincl">
+        <parameters>
+          <par name="sd" nr="1"/>
+        </parameters>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

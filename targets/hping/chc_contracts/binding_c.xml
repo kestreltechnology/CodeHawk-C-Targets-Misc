@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:54.082038"/>
+  <cfile name="binding">
+    <data-structures/>
+    <functions>
+      <function name="inc_destparm">
+        <parameters>
+          <par name="sid" nr="1"/>
+        </parameters>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

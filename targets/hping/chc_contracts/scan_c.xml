@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:58.491570"/>
+  <cfile name="scan">
+    <data-structures/>
+    <global-variables>
+      <gvar name="linkhdr_size"/>
+      <gvar name="opt_scanports"/>
+      <gvar name="sending_wait"/>
+    </global-variables>
+    <functions>
+      <function name="do_exit">
+        <parameters>
+          <par name="sid" nr="1"/>
+        </parameters>
+      </function>
+      <function name="parse_ports">
+        <parameters>
+          <par name="pi" nr="1"/>
+          <par name="ports" nr="2"/>
+        </parameters>
+      </function>
+      <function name="port_to_name">
+        <parameters>
+          <par name="port" nr="1"/>
+        </parameters>
+	<postconditions>
+	  <post>
+	    <math>
+	      <apply>
+		<preserves-all-memory/>
+	      </apply>
+	    </math>
+	  </post>
+	  <post>
+	    <math>
+	      <apply>
+		<not-null/>
+		<return/>
+	      </apply>
+	    </math>
+	  </post>
+	</postconditions>
+      </function>
+      <function name="receiver">
+        <parameters>
+          <par name="pi" nr="1"/>
+          <par name="childpid" nr="2"/>
+        </parameters>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>linkhdr_size</ci>
+		  <cn>655535</cn>
+		</apply>
+		<ci>MAXINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>		
+      </function>
+      <function name="scanmain">
+        <parameters/>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<not-null/>
+		<ci>opt_scanports</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<valid-mem/>
+		<ci>opt_scanports</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+      <function name="sender">
+        <parameters>
+          <par name="pi" nr="1"/>
+        </parameters>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>sending_wait</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+      <function name="shm_attach">
+        <parameters/>
+      </function>
+      <function name="shm_close">
+        <parameters>
+          <par name="addr" nr="1"/>
+        </parameters>
+      </function>
+      <function name="shm_creat">
+        <parameters>
+          <par name="size" nr="1"/>
+        </parameters>
+      </function>
+      <function name="shm_detach">
+        <parameters>
+          <par name="addr" nr="1"/>
+        </parameters>
+      </function>
+      <function name="shm_init">
+        <parameters>
+          <par name="size" nr="1"/>
+        </parameters>
+	<postconditions>
+	  <post>
+	    <math>
+	      <apply>
+		<preserves-all-memory/>
+	      </apply>
+	    </math>
+	  </post>
+	</postconditions>
+      </function>
+      <function name="shm_rm">
+        <parameters/>
+      </function>
+      <function name="tcp_strflags">
+        <parameters>
+          <par name="s" nr="1"/>
+          <par name="flags" nr="2"/>
+        </parameters>
+	<postconditions>
+	  <post>
+	    <math>
+	      <apply>
+		<preserves-all-memory/>
+	      </apply>
+	    </math>
+	  </post>
+	</postconditions>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

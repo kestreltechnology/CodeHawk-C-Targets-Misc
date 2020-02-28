@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:54.761488"/>
+  <cfile name="main">
+    <data-structures/>
+    <global-variables>
+      <gvar name="opt_scanports" notnull="yes"/>
+    </global-variables>
+    <functions>
+      <function name="main">
+        <parameters>
+          <par name="argc" nr="1"/>
+          <par name="argv" nr="2"/>
+        </parameters>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<valid-mem/>
+		<ci>opt_scanports</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:58.574668"/>
+  <cfile name="sendhcmp">
+    <data-structures/>
+    <global-variables>
+      <gvar name="signlen"/>
+    </global-variables>
+    <functions>
+      <function name="send_hcmp">
+        <parameters>
+          <par name="type" nr="1"/>
+          <par name="arg" nr="2"/>
+        </parameters>
+	<preconditions>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>signlen</ci>
+		  <cn>8</cn>
+		</apply>
+		<ci>MAXUINT16</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+	<postconditions>
+	  <post>
+	    <math>
+	      <apply>
+		<preserves-all-memory/>
+	      </apply>
+	    </math>
+	  </post>
+	</postconditions>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:58.979025"/>
+  <cfile name="sendtcp">
+    <data-structures/>
+    <global-variables>
+      <gvar name="data_size"/>
+      <gvar name="dst_port"/>
+      <gvar name="sequence"/>
+      <gvar name="src_port"/>
+      <gvar name="src_thoff"/>
+      <gvar name="src_winsize"/>
+      <gvar name="tcp_th_flags"/>
+    </global-variables>
+    <functions>
+      <function name="send_tcp">
+        <parameters/>
+	<preconditions>
+	  <!-- data_size -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>data_size</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>data_size</ci>
+		  <cn>36</cn>
+		</apply>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- dst_port -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>dst_port</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>dst_port</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- sequence -->
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>sequence</ci>
+		  <cn>1</cn>
+		</apply>
+		<ci>MAXINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- src_port -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>src_port</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>src_port</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- src_thoff -->
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>src_thoff</ci>
+		  <cn>4</cn>
+		</apply>
+		<ci>MAXINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- src_winsize -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>src_winsize</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>src_winsize</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- tcp_th_flags -->
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>tcp_th_flags</ci>
+		<cn>255</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

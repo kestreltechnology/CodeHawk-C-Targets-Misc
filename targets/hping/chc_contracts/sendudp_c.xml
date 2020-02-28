@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="cfile" name="cfile" time="2020-02-24 22:00:59.024953"/>
+  <cfile name="sendudp">
+    <data-structures/>
+    <global-variables>
+      <gvar name="data_size"/>
+      <gvar name="dst_port"/>
+      <gvar name="sequence"/>
+      <gvar name="src_port"/>
+    </global-variables>
+    <functions>
+      <function name="send_udp">
+        <parameters/>
+	<preconditions>
+	  <!-- data_size -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>data_size</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>data_size</ci>
+		  <cn>8</cn>
+		</apply>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- dst_port -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>dst_port</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>dst_port</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- sequence -->
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<apply>
+		  <plus/>
+		  <ci>sequence</ci>
+		  <cn>1</cn>
+		</apply>
+		<ci>MAXINT32</ci>
+	      </apply>
+	    </math>
+	  </pre>
+	  <!-- src_port -->
+	  <pre>
+	    <math>
+	      <apply>
+		<geq/>
+		<ci>src_port</ci>
+		<cn>0</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	  <pre>
+	    <math>
+	      <apply>
+		<leq/>
+		<ci>src_port</ci>
+		<cn>65535</cn>
+	      </apply>
+	    </math>
+	  </pre>
+	</preconditions>
+      </function>
+    </functions>
+  </cfile>
+</c-analysis>

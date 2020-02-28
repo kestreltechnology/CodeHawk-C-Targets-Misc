@@ -5,6 +5,8 @@ semantics
 summaryresults*.json
 summaryresults*.xml
 functionindex.json
+callgraph.json
 
 # CodeHawk log files
 logfile*.txt
+chclogfile.txt

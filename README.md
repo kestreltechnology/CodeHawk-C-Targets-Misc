@@ -39,7 +39,7 @@ and to view the results when analysis is completed
 > python chc_report_project.py misc:file
 ```
 
-## Contents
+## Applications
 
 ### file
 
@@ -53,5 +53,24 @@ and to view the results when analysis is completed
   (85.2%), 8052 ppo's not yet proven (14.8%)
   ([more detailed results](targets/file/latestresults/summaryresults.txt),
   broken down by file and proof obligation kind)
+- *contract conditions*: no preconditions, 190 postconditions
 - *analysis time*: approximately 20 mins (single core), or
   9 mins (4 cores), or 5 mins (10 cores).
+
+
+### hping
+
+- *desciption*: [hping](http://www.hping.org) is a command-line
+  oriented TCP/IP packet assembler analyzer available from
+  [GitHub](https://github.com/antirez/hping). The version used in
+  this repository is an older version.
+- *size*: 55 .c files, 337 functions, 13,224 LOC
+- *semantic size*: 5213 statements, 1916 calls, 2173 assignments
+- *primary proof obligations (ppo's)*: 43,526
+- *current analysis status*> 35,579 ppo's proven safe or delegated
+  (81.7%), 7948 ppo's not yet proven (18.3%)
+  ([more detailed results](targets/hping/latestresults/summaryresults.txt),
+  broken down by file and proof obligation kind)
+- *contract conditions*: 111 preconditions, 81 postconditions
+- *analysis time*: approximately 5 mins (4 cores)
+

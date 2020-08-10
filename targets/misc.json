@@ -5,6 +5,14 @@
 	},
 	"hping": {
 	    "path": "hping"
+	},
+	"cfingerd":  {
+	    "path": "cfingerd",
+	    "version": "cfingerd-1.4.2"
+	},
+	"dnsmasq": {
+	    "path": "dnsmasq",
+	    "version": "dnsmasq-2.76"
 	}
     }
 }
